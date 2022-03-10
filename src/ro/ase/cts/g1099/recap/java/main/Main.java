@@ -12,7 +12,7 @@ import ro.ase.cts.g1099.recap.java.models.Banker;
 public class Main {
 
 	public static void main(String[] args) throws IllegalTransferException, InsufficientFundsException {
-		
+
 		System.out.println("Hello");
 		
 		List<BankAccount> accounts = new ArrayList<>();
