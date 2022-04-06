@@ -51,7 +51,7 @@ public class Account {
 		}
 		else 
 		{
-			loanValue = value;
+			this.loanValue = value;
 		}
 		this.rate = rate;
 		this.accountType = accountType;
