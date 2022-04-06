@@ -31,13 +31,16 @@ public class Account {
 		}
 	}
 	
-	public String to_string() {
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
 		return "Loan: " + this.loanValue + 
 				"; rate: " + this.rate + 
 				"; days active:" + daysActive + 
 				"; Type: " + accountType + ";";
 	}
-	
+
 	public void print() {
 		System.out.println("This is an account");
 	}
@@ -59,7 +62,7 @@ public class Account {
 	}
 
 	public Account(double value, double rate, int accountType) throws Exception {
-		if(value<0)
+		if(value < 0)
 			throw new Exception();
 		else 
 		{
