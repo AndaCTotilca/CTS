@@ -2,10 +2,10 @@ package cts.hw1.initial;
 
 
 public class Account {
-	public double	loanValue;
-	public double	rate;	
-	public int	daysActive;
-	public int	accountType;
+	public double loanValue;
+	public double rate;	
+	public int daysActive;
+	public int accountType;
 	public static final int	STANDARD=0,BUDGET=1,PREMIUM=2,SUPER_PREMIUM=3;
 	
 	public double loan() {
@@ -33,7 +33,7 @@ public class Account {
 	}
 	
 	public String to_string() {
-		return "Loan: "+this.loanValue+"; rate: "+this.rate+"; days active:"+daysActive+"; Type: "+accountType+";";
+		return "Loan: " + this.loanValue + "; rate: " + this.rate + "; days active:" + daysActive + "; Type: " + accountType + ";";
 	}
 	
 	public void print() {
@@ -41,13 +41,14 @@ public class Account {
 	}
 
 	public static double calculate(Account[] 	accounts) {
-		double totalFee=0.0;
+		double totalFee = 0.0;
 		Account	account;
-		for	(int	i=0;i<accounts.length;i++)	{
-			account=accounts[i];
-			if(account.accountType==Account.PREMIUM||account.accountType==Account.SUPER_PREMIUM)	
-				totalFee+=.0125	*	(	//	1.25%	broker's	fee
-						account.loanValue*Math.pow(account.rate,(account.daysActive/365)) - account.loanValue);	//	interest-principal
+		for	(int i = 0; i < accounts.length; i++)	{
+			account = accounts[i];
+			if(account.accountType == Account.PREMIUM || account.accountType == Account.SUPER_PREMIUM)	
+				//1.25%	broker's	fee
+				//interest-principal
+				totalFee += .0125 *	(account.loanValue * Math.pow(account.rate, (account.daysActive / 365)) - account.loanValue);	
 		}
 		return	totalFee;
 	}
