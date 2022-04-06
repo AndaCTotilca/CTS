@@ -41,8 +41,7 @@ public class Account {
 		System.out.println("This is an account");
 	}
 
-	public static double calculate(Account[] 	accounts)
-	{
+	public static double calculate(Account[] 	accounts) {
 		double totalFee=0.0;
 		Account	account;
 		int temp = 365;
@@ -58,7 +57,7 @@ public class Account {
 	public Account(double value, double rate, int accountType) throws Exception {
 		if(value<0)
 			throw new Exception();
-		else
+		else 
 		{
 			loanValue = value;
 		}
