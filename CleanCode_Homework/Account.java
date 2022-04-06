@@ -32,7 +32,10 @@ public class Account {
 	}
 	
 	public String to_string() {
-		return "Loan: " + this.loanValue + "; rate: " + this.rate + "; days active:" + daysActive + "; Type: " + accountType + ";";
+		return "Loan: " + this.loanValue + 
+				"; rate: " + this.rate + 
+				"; days active:" + daysActive + 
+				"; Type: " + accountType + ";";
 	}
 	
 	public void print() {
@@ -49,7 +52,8 @@ public class Account {
 			if(account.accountType == Account.PREMIUM || account.accountType == Account.SUPER_PREMIUM)	
 				//1.25%	broker's fee
 				//interest-principal
-				totalFee += brokersFee * (account.loanValue * Math.pow(account.rate, (account.daysActive / days)) - account.loanValue);	
+				totalFee += brokersFee * 
+							(account.loanValue * Math.pow(account.rate, (account.daysActive / days)) - account.loanValue);	
 		}
 		return	totalFee;
 	}
