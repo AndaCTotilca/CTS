@@ -43,16 +43,16 @@ public class Account {
 
 	public static double calculate(Account[] 	accounts)
 	{
-	double totalFee=0.0;
-	Account	account;
-	int temp = 365;
-	for	(int	i=0;i<accounts.length;i++)	{
-	account=accounts[i];
-	if(account.accountType==Account.PREMIUM||account.accountType==Account.SUPER_PREMIUM)	
-	totalFee+=.0125	*	(	//	1.25%	broker's	fee
-			account.loanValue*Math.pow(account.rate,(account.daysActive/365)) - account.loanValue);	//	interest-principal
-	}
-	return	totalFee;
+		double totalFee=0.0;
+		Account	account;
+		int temp = 365;
+		for	(int	i=0;i<accounts.length;i++)	{
+			account=accounts[i];
+			if(account.accountType==Account.PREMIUM||account.accountType==Account.SUPER_PREMIUM)	
+				totalFee+=.0125	*	(	//	1.25%	broker's	fee
+						account.loanValue*Math.pow(account.rate,(account.daysActive/365)) - account.loanValue);	//	interest-principal
+		}
+		return	totalFee;
 	}
 
 	public Account(double value, double rate, int accountType) throws Exception {
