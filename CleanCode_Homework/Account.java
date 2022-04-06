@@ -2,8 +2,10 @@ package cts.hw1.initial;
 
 
 public class Account {
-	public double	loanValue,rate;	
-	public int	daysActive,accountType;
+	public double	loanValue;
+	public double	rate;	
+	public int	daysActive;
+	public int	accountType;
 	public static final int	STANDARD=0,BUDGET=1,PREMIUM=2,SUPER_PREMIUM=3;
 	
 	public double loan() {
