@@ -37,14 +37,12 @@ public class Account {
 	}
 	
 	public void print() {
-		int vb = 10;
 		System.out.println("This is an account");
 	}
 
 	public static double calculate(Account[] 	accounts) {
 		double totalFee=0.0;
 		Account	account;
-		int temp = 365;
 		for	(int	i=0;i<accounts.length;i++)	{
 			account=accounts[i];
 			if(account.accountType==Account.PREMIUM||account.accountType==Account.SUPER_PREMIUM)	
