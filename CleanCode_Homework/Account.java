@@ -34,18 +34,21 @@ public class Account {
 		Account	account;
 		for	(int i = 0; i < accounts.length; i++)	{
 			account = accounts[i];
-			if(account.accountType == Account.PREMIUM || account.accountType == Account.SUPER_PREMIUM)	
+			if(account.accountType == Account.PREMIUM || account.accountType == Account.SUPER_PREMIUM) {
 				//1.25%	broker's fee
 				//interest-principal
 				totalFee += brokersFee * 
-							(account.loanValue * Math.pow(account.rate, (account.daysActive / days)) - account.loanValue);	
+							(account.loanValue * Math.pow(account.rate, (account.daysActive / days)) - account.loanValue);
+			}
 		}
 		return	totalFee;
 	}
 
 	public Account(double value, double rate, int accountType) throws Exception {
 		if(value < 0)
+		{
 			throw new Exception();
+		}
 		else 
 		{
 			loanValue = value;
