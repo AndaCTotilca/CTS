@@ -14,12 +14,52 @@ public class Account {
 	}
 	
 	
+	public double getLoanValue() {
+		return loanValue;
+	}
+
+
+	public void setLoanValue(double loanValue) {
+		this.loanValue = loanValue;
+	}
+
+
+	public double getRate() {
+		return rate;
+	}
+
+
+	public void setRate(double rate) {
+		this.rate = rate;
+	}
+
+
+	public int getDaysActive() {
+		return daysActive;
+	}
+
+
+	public void setDaysActive(int daysActive) {
+		this.daysActive = daysActive;
+	}
+
+
+	public int getAccountType() {
+		return accountType;
+	}
+
+
+	public void setAccountType(int accountType) {
+		this.accountType = accountType;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Loan: " + this.loanValue + 
-				"; rate: " + this.rate + 
-				"; days active:" + daysActive + 
-				"; Type: " + accountType + ";";
+		return "Loan: " + this.getLoanValue() + 
+				"; rate: " + this.getRate() + 
+				"; days active:" + this.getDaysActive() + 
+				"; Type: " + this.getAccountType() + ";";
 	}
 
 	public void print() {
@@ -35,10 +75,10 @@ public class Account {
 			account = accounts[i];
 			if(account.accountType == Account.PREMIUM || account.accountType == Account.SUPER_PREMIUM) {
 				totalFee += brokersFee * 
-							(account.loanValue * Math.pow(account.rate, (account.daysActive / days)) - account.loanValue);
+							(account.getLoanValue() * Math.pow(account.getRate(), (account.getDaysActive() / days)) - account.getLoanValue());
 			}
 		}
-		return	totalFee;
+		return totalFee;
 	}
 
 	public Account(double value, double rate, int accountType) throws Exception {
@@ -48,10 +88,10 @@ public class Account {
 		}
 		else 
 		{
-			this.loanValue = value;
+			this.setLoanValue(value);
 		}
-		this.rate = rate;
-		this.accountType = accountType;
+		this.setRate(rate);
+		this.setAccountType(accountType);
 	}
 	
 }
