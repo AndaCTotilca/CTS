@@ -41,13 +41,15 @@ public class Account {
 
 	public static double calculate(Account[] accounts) {
 		double totalFee = 0.0;
+		double brokersFee = 0.0125;
+		int days = 365;
 		Account	account;
 		for	(int i = 0; i < accounts.length; i++)	{
 			account = accounts[i];
 			if(account.accountType == Account.PREMIUM || account.accountType == Account.SUPER_PREMIUM)	
 				//1.25%	broker's fee
 				//interest-principal
-				totalFee += .0125 * (account.loanValue * Math.pow(account.rate, (account.daysActive / 365)) - account.loanValue);	
+				totalFee += brokersFee * (account.loanValue * Math.pow(account.rate, (account.daysActive / days)) - account.loanValue);	
 		}
 		return	totalFee;
 	}
@@ -62,6 +64,5 @@ public class Account {
 		this.rate = rate;
 		this.accountType = accountType;
 	}
-	
 	
 }
