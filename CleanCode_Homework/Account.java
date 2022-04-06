@@ -40,15 +40,15 @@ public class Account {
 		System.out.println("This is an account");
 	}
 
-	public static double calculate(Account[] 	accounts) {
+	public static double calculate(Account[] accounts) {
 		double totalFee = 0.0;
 		Account	account;
 		for	(int i = 0; i < accounts.length; i++)	{
 			account = accounts[i];
 			if(account.accountType == Account.PREMIUM || account.accountType == Account.SUPER_PREMIUM)	
-				//1.25%	broker's	fee
+				//1.25%	broker's fee
 				//interest-principal
-				totalFee += .0125 *	(account.loanValue * Math.pow(account.rate, (account.daysActive / 365)) - account.loanValue);	
+				totalFee += .0125 * (account.loanValue * Math.pow(account.rate, (account.daysActive / 365)) - account.loanValue);	
 		}
 		return	totalFee;
 	}
