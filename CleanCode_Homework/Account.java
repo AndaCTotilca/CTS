@@ -1,6 +1,5 @@
 package cts.hw1.initial;
 
-
 public class Account {
 	public double	loan_value,rate;	
 	public int	daysActive,account_Type;
