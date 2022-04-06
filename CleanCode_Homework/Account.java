@@ -13,24 +13,6 @@ public class Account {
 		return loanValue;
 	}
 	
-	public double getRate() {
-		System.out.println("The rate is " + rate);
-		return this.rate;
-	}
-	
-	//must have method - the lead has requested it in all classes
-	public double getMonthlyRate() {
-		return loanValue * rate;
-	}
-	
-	public void setValue(double value) throws Exception {
-		if(value < 0)
-			throw new Exception();
-		else {
-			loanValue = value;
-		}
-	}
-	
 	
 	@Override
 	public String toString() {
