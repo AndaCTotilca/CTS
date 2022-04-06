@@ -16,7 +16,6 @@ public class Account {
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "Loan: " + this.loanValue + 
 				"; rate: " + this.rate + 
 				"; days active:" + daysActive + 
@@ -35,8 +34,6 @@ public class Account {
 		for	(int i = 0; i < accounts.length; i++)	{
 			account = accounts[i];
 			if(account.accountType == Account.PREMIUM || account.accountType == Account.SUPER_PREMIUM) {
-				//1.25%	broker's fee
-				//interest-principal
 				totalFee += brokersFee * 
 							(account.loanValue * Math.pow(account.rate, (account.daysActive / days)) - account.loanValue);
 			}
